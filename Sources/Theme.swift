@@ -8,7 +8,7 @@ struct Theme: Identifiable, Equatable {
     let separatorColor: Color
 
     static let all: [Theme] = [
-        Theme(id: "classic",  name: "Classic",  cardColor: Color(red: 0.16, green: 0.16, blue: 0.18), textColor: .white,                                    separatorColor: Color(red: 0.10, green: 0.10, blue: 0.12)),
+        Theme(id: "classic",  name: "Classic",  cardColor: Color(red: 0.14, green: 0.14, blue: 0.16), textColor: .white,                                    separatorColor: Color(red: 0.08, green: 0.08, blue: 0.10)),
         Theme(id: "midnight", name: "Midnight", cardColor: Color(red: 0.05, green: 0.05, blue: 0.05), textColor: Color(red: 0.94, green: 0.94, blue: 0.94), separatorColor: .black),
         Theme(id: "retro",    name: "Retro",    cardColor: Color(red: 0.24, green: 0.17, blue: 0.11), textColor: Color(red: 0.96, green: 0.90, blue: 0.78), separatorColor: Color(red: 0.18, green: 0.11, blue: 0.05)),
         Theme(id: "terminal", name: "Terminal", cardColor: Color(red: 0.04, green: 0.10, blue: 0.04), textColor: Color(red: 0.20, green: 1.00, blue: 0.20), separatorColor: .black),
