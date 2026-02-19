@@ -47,6 +47,9 @@ final class ClockViewModel: ObservableObject {
     @Published var opacity: Double {
         didSet { UserDefaults.standard.set(opacity, forKey: "opacity") }
     }
+    @Published var showOnAllSpaces: Bool {
+        didSet { UserDefaults.standard.set(showOnAllSpaces, forKey: "showOnAllSpaces") }
+    }
 
     private var timer: AnyCancellable?
 
@@ -59,6 +62,7 @@ final class ClockViewModel: ObservableObject {
         self.blinkSeparators = defaults.object(forKey: "blinkSeparators") as? Bool ?? true
         self.showAmPm = defaults.object(forKey: "showAmPm") as? Bool ?? true
         self.opacity = defaults.object(forKey: "opacity") as? Double ?? 1.0
+        self.showOnAllSpaces = defaults.object(forKey: "showOnAllSpaces") as? Bool ?? true
 
         updateDigits()
         startTimer()

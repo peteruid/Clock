@@ -103,23 +103,24 @@ class ClockPanel: NSPanel {
         }
     }
 
-    func updateWindowLevel(_ wl: WindowLevel) {
+    func updateWindowLevel(_ wl: WindowLevel, allSpaces: Bool = true) {
         currentWindowLevel = wl
+        let spaceBehavior: NSWindow.CollectionBehavior = allSpaces ? .canJoinAllSpaces : []
         switch wl {
         case .floating:
             level = .floating
             isFloatingPanel = true
-            collectionBehavior = [.canJoinAllSpaces, .fullScreenAuxiliary]
+            collectionBehavior = [spaceBehavior, .fullScreenAuxiliary]
             ignoresMouseEvents = false
         case .normal:
             level = .normal
             isFloatingPanel = false
-            collectionBehavior = [.canJoinAllSpaces, .fullScreenAuxiliary]
+            collectionBehavior = [spaceBehavior, .fullScreenAuxiliary]
             ignoresMouseEvents = false
         case .desktop:
             level = NSWindow.Level(rawValue: Int(CGWindowLevelForKey(.desktopWindow)))
             isFloatingPanel = false
-            collectionBehavior = [.canJoinAllSpaces, .stationary, .fullScreenAuxiliary]
+            collectionBehavior = [spaceBehavior, .stationary, .fullScreenAuxiliary]
             ignoresMouseEvents = false
         }
     }

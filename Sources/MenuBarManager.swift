@@ -43,6 +43,12 @@ final class MenuBarManager: NSObject, NSMenuDelegate {
             menu.addItem(item)
         }
 
+        // Show on All Spaces
+        let allSpaces = NSMenuItem(title: "Show on All Spaces", action: #selector(toggleAllSpaces), keyEquivalent: "")
+        allSpaces.target = self
+        allSpaces.state = viewModel.showOnAllSpaces ? .on : .off
+        menu.addItem(allSpaces)
+
         menu.addItem(.separator())
 
         // Time format
@@ -119,7 +125,12 @@ final class MenuBarManager: NSObject, NSMenuDelegate {
         guard let raw = sender.representedObject as? String,
               let wl = WindowLevel(rawValue: raw) else { return }
         viewModel.windowLevel = wl
-        panel?.updateWindowLevel(wl)
+        panel?.updateWindowLevel(wl, allSpaces: viewModel.showOnAllSpaces)
+    }
+
+    @objc private func toggleAllSpaces() {
+        viewModel.showOnAllSpaces.toggle()
+        panel?.updateWindowLevel(viewModel.windowLevel, allSpaces: viewModel.showOnAllSpaces)
     }
 
     @objc private func set12Hour() {
