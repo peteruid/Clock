@@ -48,7 +48,7 @@ final class AppDelegate: NSObject, NSApplicationDelegate {
             object: nil
         )
 
-        NSApp.setActivationPolicy(.accessory)
+        NSApp.setActivationPolicy(.regular)
 
         viewModel = ClockViewModel()
 

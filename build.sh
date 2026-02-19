@@ -11,5 +11,8 @@ mkdir -p "FlipClock.app/Contents"
 cp .build/release/Clock "$APP_DIR/Clock"
 cp Sources/Info.plist "FlipClock.app/Contents/Info.plist"
 
+mkdir -p "FlipClock.app/Contents/Resources"
+cp Resources/AppIcon.icns "FlipClock.app/Contents/Resources/AppIcon.icns"
+
 echo "Built FlipClock.app successfully."
 echo "Run with: open FlipClock.app"
