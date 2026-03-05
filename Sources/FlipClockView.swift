@@ -45,7 +45,6 @@ struct FlipClockView: View {
                         .foregroundStyle(viewModel.currentTheme.textColor.opacity(0.7))
                 }
             }
-            .opacity(viewModel.opacity)
             .scaleEffect(scale)
             .frame(width: geo.size.width, height: geo.size.height)
         }

@@ -54,6 +54,7 @@ final class AppDelegate: NSObject, NSApplicationDelegate {
 
         panel = ClockPanel(viewModel: viewModel)
         panel.updateWindowLevel(viewModel.windowLevel, allSpaces: viewModel.showOnAllSpaces)
+        panel.alphaValue = viewModel.opacity
         // Only center if no saved position (first launch)
         if UserDefaults.standard.string(forKey: "windowFrame") == nil {
             panel.center()

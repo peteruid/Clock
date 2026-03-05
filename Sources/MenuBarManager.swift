@@ -156,6 +156,7 @@ final class MenuBarManager: NSObject, NSMenuDelegate {
 
     @objc private func setOpacity(_ sender: NSMenuItem) {
         viewModel.opacity = Double(sender.tag) / 100.0
+        panel?.alphaValue = viewModel.opacity
     }
 
     @objc private func selectTheme(_ sender: NSMenuItem) {
