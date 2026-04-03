@@ -35,6 +35,7 @@ struct Theme: Identifiable, Equatable {
         Theme(id: "coffee",      name: "Coffee",      cardColor: Color(red: 0.11, green: 0.10, blue: 0.09), textColor: Color(red: 1.00, green: 1.00, blue: 0.88), separatorColor: Color(red: 0.07, green: 0.06, blue: 0.05)),
         Theme(id: "greyscale",   name: "Greyscale",   cardColor: Color(red: 0.95, green: 0.95, blue: 0.95), textColor: Color(red: 0.20, green: 0.20, blue: 0.20), separatorColor: Color(red: 0.85, green: 0.85, blue: 0.85)),
         Theme(id: "printing",    name: "Printing",    cardColor: Color(red: 1.00, green: 1.00, blue: 1.00), textColor: Color(red: 0.06, green: 0.06, blue: 0.06), separatorColor: Color(red: 0.90, green: 0.90, blue: 0.90)),
+        Theme(id: "liberty",     name: "Liberty",     cardColor: Color(red: 0.176, green: 0.176, blue: 0.176), textColor: .white, separatorColor: Color(red: 0.12, green: 0.12, blue: 0.12)),
     ]
 
     static let `default` = all[0]
