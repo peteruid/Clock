@@ -88,11 +88,14 @@ private struct HalfCard: View {
             )
             .fill(theme.cardColor)
             .overlay(
-                // Subtle gradient for depth
                 LinearGradient(
-                    colors: half == .top
-                        ? [.white.opacity(0.06), .clear]
-                        : [.clear, .white.opacity(0.03)],
+                    colors: {
+                        let topOpacity = theme.id == "widget" ? 0.02 : 0.06
+                        let bottomOpacity = theme.id == "widget" ? 0.01 : 0.03
+                        return half == .top
+                            ? [.white.opacity(topOpacity), .clear]
+                            : [.clear, .white.opacity(bottomOpacity)]
+                    }(),
                     startPoint: .top,
                     endPoint: .bottom
                 )
